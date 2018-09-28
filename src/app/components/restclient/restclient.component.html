@@ -1,0 +1,23 @@
+<table class="table">
+  <thead>
+    <th>Sample model</th>
+    <th>View</th>
+    <th>Controller</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input #sampleModel /></td>
+      <td><input #view /></td>
+      <td><input #ctrl /></td>
+      <td><button class="btn" (click)="postRender(sampleModel.value,view.value,ctrl.value)">Add</button></td>
+    </tr>
+    <tr *ngFor="let render of renders">
+      <td>{{render.sampleModel}}</td>
+      <td>{{render.view}}</td>
+      <td>{{render.ctrl}}</td>
+      <td><button routerLink="/restclient/{{render.id}}" class="btn">Update</button>
+        <button (click)="deleteRender(render.id)" class="btn">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

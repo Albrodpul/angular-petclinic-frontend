@@ -1,0 +1,17 @@
+<table class="table">
+  <thead>
+    <th>Sample model</th>
+    <th>View</th>
+    <th>Controller</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let render of renders">
+      <td><input #sampleModel value="{{render.sampleModel}}" /></td>
+      <td><input #view value="{{render.view}}" /></td>
+      <td><input #ctrl value="{{render.ctrl}}" /></td>
+      <td><button class="btn" (click)="updateRender(sampleModel.value,view.value,ctrl.value)">Update</button></td>
+    </tr>
+  </tbody>
+</table>
+<a routerLink="/restclient">Back</a>
